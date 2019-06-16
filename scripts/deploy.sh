@@ -1,0 +1,1 @@
+gamma-cli deploy ./contracts/notary.go -name Notary -signer user1
