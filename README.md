@@ -13,7 +13,7 @@ If you'd like to get training for your team, feel free to [reach out](mailto:ser
 ## Usage
 1. For theoretical part, see these [slides](https://docs.google.com/presentation/d/1TqbglcIAeVZh7t3bffnsN5plo0Ae_7mSH-nNDSIWL4s/edit?usp=sharing).
 1. Branch [`master`](https://github.com/orbs-network/notary-workshop/tree/master) is a clean slate for you to start. 
-1. Other numbered branches contain partial solutions and can serve as a good starting point if you would like to pick up from there.
+1. Other numbered [branches](https://github.com/orbs-network/notary-workshop/branches) contain partial solutions and can serve as a good starting point if you would like to pick up from there.
 
 ## Table of Content
 1. Writing a smart contract
