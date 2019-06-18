@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
 import { fileToHash } from './utils';
 import './App.css';
+import { createAccount, Client, argString } from 'orbs-client-sdk/dist/index.es';
 
 function App() {
+
+  const {publicKey, privateKey} = createAccount();
+  const orbsClient = new Client('http://localhost:8080', 42, 'TEST_NET');
 
   const [file, setFile] = useState();
 
   const registerHandler = async () => {
     const fileHash = await fileToHash(file);
-    console.log(fileHash);
+    const [tx] = orbsClient.createTransaction(
+      publicKey,
+      privateKey,
+      'Notary',
+      'register',
+      [argString(fileHash)]
+    );
+    const receipt = await orbsClient.sendTransaction(tx);
+    console.log(receipt); 
   };
 
   return (
@@ -18,9 +30,6 @@ function App() {
       <div>
         <button onClick={registerHandler}>Register</button>
         <button>Verify</button>
-      </div>
-      <div>
-        <p>Results</p>
       </div>
     </>
   );
