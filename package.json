@@ -6,7 +6,8 @@
     "orbs-client-sdk": "0.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "sjcl": "^1.0.8"
   },
   "scripts": {
     "postinstall": "brew install orbs-network/devtools/gamma-cli",
