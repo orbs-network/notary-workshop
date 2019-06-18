@@ -23,13 +23,25 @@ function App() {
     console.log(receipt); 
   };
 
+  const verifyHandler = async () => {
+    const fileHash = await fileToHash(file);
+    const query = orbsClient.createQuery(
+      publicKey,
+      'Notary',
+      'verify',
+      [argString(fileHash)]
+    );
+    const response = await orbsClient.sendQuery(query);
+    console.log(response);
+  };
+
   return (
     <>
       <h1>Notary App</h1>
       <input type="file" onChange={ev => setFile(ev.target.files[0])} />
       <div>
         <button onClick={registerHandler}>Register</button>
-        <button>Verify</button>
+        <button onClick={verifyHandler}>Verify</button>
       </div>
     </>
   );
